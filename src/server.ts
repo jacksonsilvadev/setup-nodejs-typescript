@@ -1,9 +1,18 @@
-import express, { response } from 'express'
+const app = require('../../../starter')
 
-const app = express();
+const config = require('./config/index')
 
-app.get('/', (req, res) => {
-  return res.json({ message: 'Hello World' })
-})
+const routes = app.helpers.requireDir(`${__dirname}/routes`)
+const services = app.helpers.requireDir(`${__dirname}/services`)
 
-app.listen(3333)
+app
+  .init({
+    environment: config.environment,
+    logger: config.logger,
+    services,
+    http: {
+      ...config.http,
+      routes
+    }
+  })
+  .then(({ start }) => start())
