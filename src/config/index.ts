@@ -20,6 +20,9 @@ module.exports = {
     name: serviceName,
     port: process.env.API_PORT
   },
+  database: {
+    provider: process.env.DATABASE_PROVIDER
+  },
   logger: {
     environment,
     name: serviceName,

@@ -1,7 +1,8 @@
-import { User } from '@models/User'
 
 test('it should be ok', () => {
-  const user = new User()
+  const user = {
+    name: ''
+  }
 
   user.name = 'Jackson'
 
