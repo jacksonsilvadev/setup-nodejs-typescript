@@ -16,3 +16,11 @@ export interface OptionsSkinePath {
   },
   start: Function
 }
+
+export interface skineService {
+  models: PrismaTypes
+  logger: any,
+  services: any
+  queue: any
+  createArgs: Function
+}

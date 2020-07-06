@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client'
-import app from '../../../starter'
+import app from 'skine'
 import config from './config/index'
-import { OptionsSkinePath } from './@types/skine/index'
+import { OptionsSkinePath } from './types/skine/index'
 
 const routes = app.helpers.requireDir(`${__dirname}/routes`)
 const services = app.helpers.requireDir(`${__dirname}/services`)
@@ -20,6 +20,6 @@ app
       routes
     }
   })
-  .then((options: OptionsSkinePath) : any => {
+  .then((options: OptionsSkinePath) => {
     return options.start()
   })
